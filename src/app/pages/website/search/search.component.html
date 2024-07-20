@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="search-box">
+    <div class="search-options">
+      <input type="radio" name="tripType" value="return" checked> Return
+      <input type="radio" name="tripType" value="oneWay"> One way
+      <input type="radio" name="tripType" value="multiCity"> Multi-city
+    </div>
+    <div class="search-fields">
+      <div class="field from">
+        <label for="from">From</label>
+       
+        <select class="form-select" [(ngModel)]="searchParams.from">
+          <option value="">select Airport</option>
+          <option *ngFor="let item of airportList" [value]="item.airportName">{{item.airportName}},{{item.cityName}}</option>
+        </select>
+      
+      </div>
+      <div class="field to">
+        <label for="to">To</label>
+        <select class="form-select" [(ngModel)]="searchParams.to">
+          <option value="">select Airport</option>
+          <option *ngFor="let item of airportList" [value]="item.airportName">{{item.airportName}},{{item.cityName}}</option>
+        </select>
+   
+      </div>
+      <div class="field date">
+        <label for="depart">Depart</label>
+        <input type="date" id="depart" [(ngModel)]="searchParams.departDate">
+      </div>
+      <div class="field date">
+        <label for="return">Return</label>
+        <input type="date" id="return" [(ngModel)]="searchParams.returnDate">
+      </div>
+      <div class="field travelers">
+        <label for="travelers">Travellers and cabin class</label>
+        <select id="travelers" [(ngModel)]="searchParams.travelers">
+          <option value="1">1 adult, Economy</option>
+        </select>
+      </div>
+      
+      <button class="search-button" (click)="onSearchClick()">Search</button>
+
+    </div>
+    
+  </div>
+</div>

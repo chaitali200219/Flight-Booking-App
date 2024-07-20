@@ -1,0 +1,70 @@
+
+
+  .content {
+    flex: 1; /* This makes the main content take the available space */
+    padding: 200px;
+  }
+
+/* Footer styles */
+.footer {
+    background-color: #062D49; /* Adjust the background color to match your design */
+    color: white; /* Adjust text color to match your design */
+    padding: 20px;
+    font-size: 14px;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .footer-left {
+    flex: 1;
+  }
+  
+  .footer-left .location {
+    background-color: #1a3b59; /* Background color for the location text */
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .footer-right {
+    display: flex;
+    flex: 3;
+    justify-content: space-between;
+  }
+  
+  .footer-column {
+    flex: 1;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    color: white; /* Adjust link color to match your design */
+    text-decoration: none;
+  }
+  
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #1a3b59; /* Border color for separation */
+    padding-top: 20px;
+  }
+  
+  .footer-bottom p {
+    margin: 5px 0;
+  }
+  

@@ -1,0 +1,96 @@
+/* Container for the login form */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading */
+  .container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #343a40;
+  }
+  
+  /* Form labels */
+  .form-label {
+    font-weight: bold;
+    color: #495057;
+  }
+  
+  /* Form controls */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+  }
+  
+  /* Submit button */
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* login.component.css */
+
+.button-group {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 15px; /* Add space between buttons */
+  margin-top: 15px;
+}
+
+.custom-btn {
+  background-color: #6c757d; /* Gray color */
+  border-color: #6c757d; /* Match border to background */
+  color: #fff; /* White text color */
+  width: 100px; /* Set a fixed width for buttons */
+  border-radius: 5px; /* Optional: rounded corners */
+  padding: 10px; /* Add padding for a nicer look */
+}
+
+.custom-btn:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+  border-color: #545b62; /* Match border on hover */
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}

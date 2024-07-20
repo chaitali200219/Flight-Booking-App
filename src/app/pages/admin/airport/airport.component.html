@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-12  text-end">
+        <button class="btn btn-success" (click)="addNew()">Add New</button>
+        <button class="btn btn-success" (click)="addNew()">Bulk Update</button>
+    </div>
+</div>    
+<div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sr no</th>
+            <th>Airport Code</th>
+            <th>Airport Name</th>
+            <th>City Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let airport of airportList; let sr = index">
+            <td>{{ sr + 1 }}</td>
+            <td>
+              <input type="text" [(ngModel)]="airport.airportCode" placeholder="Enter airport code" />
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="airport.airportName" placeholder="Enter airport name" />
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="airport.cityName" placeholder="Enter city name" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

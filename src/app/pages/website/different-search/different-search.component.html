@@ -1,0 +1,106 @@
+<!-- Table displaying search parameters -->
+<div class="row">
+  <div class="col-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>From</th>
+          <th>To</th>
+          <th>Depart Date</th>
+          <th>Return Date</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ searchParams.from }}</td>
+          <td>{{ searchParams.to }}</td>
+          <td>{{ searchParams.departDate }}</td>
+          <td>{{ searchParams.returnDate }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Display search results -->
+<div *ngIf="searchResults.length > 0">
+  <h3>Search Results</h3>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Flight Number</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flight of searchResults">
+            <td>{{ flight.flightNumber }}</td>
+            <td>{{ flight.departureAirportName }}</td>
+            <td>{{ flight.arrivalAirportName }}</td>
+            <td>{{ flight.departureTime }}</td>
+            <td>{{ flight.arrivalTime }}</td>
+            <td>{{ flight.price }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="openBookingModal()">Book Flight</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for booking details -->
+<div class="modal" tabindex="-1" role="dialog" style="display: none;" id="bookingModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Book Flight</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeBookingModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="bookingDetails.name">
+          </div>
+          <div class="form-group">
+            <label for="contact">Contact Number</label>
+            <input type="text" class="form-control" id="contact" name="contactNumber" [(ngModel)]="bookingDetails.contactNumber">
+          </div>
+          <div class="form-group">
+            <label for="aadhar">Aadhar Card Number</label>
+            <input type="text" class="form-control" id="aadhar" name="aadharCardNumber" [(ngModel)]="bookingDetails.aadharCardNumber">
+          </div>
+          <div class="form-group">
+            <label for="numberOfPeople">Number of People</label>
+            <input type="number" class="form-control" id="numberOfPeople" name="numberOfPeople" [(ngModel)]="bookingDetails.numberOfPeople">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeBookingModal()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveBooking()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Display message if no search results -->
+<div *ngIf="searchResults.length === 0 && searchParams.from && searchParams.to">
+  <p>No flights found for the selected criteria.</p>
+</div>
